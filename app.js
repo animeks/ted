@@ -6,6 +6,7 @@ const express = require('express'),
   cookieParser = require("cookie-parser"),
 bodyParser = require("body-parser");
 const app = express();
+const PORT = process.env.PORT || 80;
 
 app.set("json spaces", 2);
 app.use(cors());
@@ -33,4 +34,4 @@ app.use("/", (req,res) => {
     res.render(__dirname + "/public/index.ejs")
 })
 
-app.listen(8080, () => { console.log('App listening run to server http://localhost:8080')})
+app.listen(PORT, () => { console.log('App listening run to server http://localhost:' + PORT)})
